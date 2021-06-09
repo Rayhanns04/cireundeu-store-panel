@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -16,9 +17,9 @@ class ProductApiController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::with('subCategory')->get();
 
-        return response()->json(['message' => 'success get data', 'data' => $products], Response::HTTP_OK);
+        return response()->json(['message' => 'success get data', 'data' => ProductResource::collection($products)], Response::HTTP_OK);
     }
 
     /**
@@ -27,75 +28,75 @@ class ProductApiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'image' => 'required',
-            'title' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'category_id' => 'required'
-        ]);
+    // public function store(Request $request)
+    // {
+    //     $validator = Validator::make($request->all(), [
+    //         'image' => 'required',
+    //         'title' => 'required',
+    //         'description' => 'required',
+    //         'price' => 'required',
+    //         'category_id' => 'required'
+    //     ]);
 
-        if ($validator->fails()) {
-            return response()->json(['message' => $validator->errors()], Response::HTTP_UNPROCESSABLE_ENTITY);
-        }
+    //     if ($validator->fails()) {
+    //         return response()->json(['message' => $validator->errors()], Response::HTTP_UNPROCESSABLE_ENTITY);
+    //     }
 
-        $products = Product::create($request->all());
-        return response()->json(['message' => 'Product created', 'data' => $products], Response::HTTP_OK);
-    }
+    //     $products = Product::create($request->all());
+    //     return response()->json(['message' => 'Product created', 'data' => $products], Response::HTTP_OK);
+    // }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $product = Product::findOrFail($id);
+    // /**
+    //  * Display the specified resource.
+    //  *
+    //  * @param  int  $id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function show($id)
+    // {
+    //     $product = Product::findOrFail($id);
 
-        return response()->json(['message' => 'Detail of product resource','data' => $product], Response::HTTP_OK);
-    }
+    //     return response()->json(['message' => 'Detail of product resource','data' => $product], Response::HTTP_OK);
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $product = Product::findOrFail($id);
+    // /**
+    //  * Update the specified resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @param  int  $id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function update(Request $request, $id)
+    // {
+    //     $product = Product::findOrFail($id);
 
-        $validator = Validator::make($request->all(), [
-            'image' => 'required',
-            'title' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'category_id' => 'required'
-        ]);
+    //     $validator = Validator::make($request->all(), [
+    //         'image' => 'required',
+    //         'title' => 'required',
+    //         'description' => 'required',
+    //         'price' => 'required',
+    //         'category_id' => 'required'
+    //     ]);
 
-        if ($validator->fails()) {
-            return response()->json(['message' => $validator->errors()], Response::HTTP_UNPROCESSABLE_ENTITY);
-        }
+    //     if ($validator->fails()) {
+    //         return response()->json(['message' => $validator->errors()], Response::HTTP_UNPROCESSABLE_ENTITY);
+    //     }
 
-        $product->update($request->all());
-        return response()->json(['message' => 'Product updated', 'data' => $product], Response::HTTP_OK);
-    }
+    //     $product->update($request->all());
+    //     return response()->json(['message' => 'Product updated', 'data' => $product], Response::HTTP_OK);
+    // }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-         $product = Product::findOrFail($id);
-         $product->delete();
+    // /**
+    //  * Remove the specified resource from storage.
+    //  *
+    //  * @param  int  $id
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function destroy($id)
+    // {
+    //      $product = Product::findOrFail($id);
+    //      $product->delete();
 
-         return response()->json(['message' => 'Product deleted', 'data' => $product], Response::HTTP_OK);
-    }
+    //      return response()->json(['message' => 'Product deleted', 'data' => $product], Response::HTTP_OK);
+    // }
 }

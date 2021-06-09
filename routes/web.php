@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,4 +40,13 @@ Route::prefix('/categories')->group(function() {
     Route::get('/edit/{id}', [CategoryController::class, 'edit']);
     Route::post('/save-edit/{id}', [CategoryController::class, 'update']);
     Route::get('/{id}', [CategoryController::class, 'destroy']);
+});
+
+Route::prefix('/subcategories')->group(function() {
+    Route::get('/', [SubCategoryController::class, 'index']);
+    Route::get('/create', [SubCategoryController::class, 'create']);
+    Route::post('/save-crate', [SubCategoryController::class, 'store']);
+    Route::get('/edit/{id}', [SubCategoryController::class, 'edit']);
+    Route::post('/save-edit/{id}', [SubCategoryController::class, 'update']);
+    Route::get('/{id}', [SubCategoryController::class, 'destroy']);
 });

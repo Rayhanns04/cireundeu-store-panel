@@ -8,7 +8,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo-sm.png') }}">
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
@@ -84,8 +84,8 @@
                                     height="12"> <span class="align-middle">Spanish</span> </a>
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item"> <img
-                                    src="{{ asset('assets/images/flags/germany.jpg') }}" alt="user-image" class="me-1"
-                                    height="12">
+                                    src="{{ asset('assets/images/flags/germany.jpg') }}" alt="user-image"
+                                    class="me-1" height="12">
                                 <span class="align-middle">German</span> </a>
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item"> <img
@@ -118,7 +118,8 @@
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#"> <img
-                                                src="{{ asset('assets/images/brands/dribbble.png') }}" alt="dribbble">
+                                                src="{{ asset('assets/images/brands/dribbble.png') }}"
+                                                alt="dribbble">
                                             <span>Dribbble</span> </a>
                                     </div>
                                 </div>
@@ -295,16 +296,23 @@
                         </li>
 
                         <li>
-                            <a href="/products">
+                            <a href="/categories">
                                 <i class="uil-home-alt"></i>
-                                <span>Products</span>
+                                <span>Categories</span>
                             </a>
                         </li>
 
                         <li>
-                            <a href="/categories">
+                            <a href="/subcategories">
                                 <i class="uil-home-alt"></i>
-                                <span>Categories</span>
+                                <span>Sub Categories</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/products">
+                                <i class="uil-home-alt"></i>
+                                <span>Products</span>
                             </a>
                         </li>
                     </ul>
@@ -367,6 +375,22 @@
                             </div>
                         </div>
                         <!-- end col-->
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="float-end mt-2">
+                                        <div id="growth-chart"> </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="mb-1 mt-1"><span
+                                                data-plugin="counterup">{{ $subCategoriesCount }}</span>
+                                        </h4>
+                                        <p class="text-muted mb-0">Total SubCategories</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col-->
                     </div>
                     <!-- end row -->
                     <div class="row">
@@ -376,7 +400,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Category</h4>
                                     <div class="table-responsive">
-                                        <table class="table table-centered table-nowrap mb-0">
+                                        <table class="table table-centered table-nowrap mb-0 ">
                                             <thead class="table-light">
                                                 <tr>
                                                     <th>#</th>
@@ -388,6 +412,32 @@
                                                     <tr>
                                                         <th class="col-1" scope="row">{{ $loop->iteration }}</th>
                                                         <td>{{ $categorie->name }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- end table-responsive -->
+                                </div>
+                            </div>
+
+                            <!-- table categories -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Sub Category</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-centered table-nowrap mb-0">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($subCategories as $subCategorie)
+                                                    <tr>
+                                                        <th class="col-1" scope="row">{{ $loop->iteration }}</th>
+                                                        <td>{{ $subCategorie->name }}</td>
                                                     </tr>
                                                 @endforeach
                                             </tbody>
@@ -425,7 +475,7 @@
                                                         <td>{{ $product->description }}</td>
                                                         <td>Rp {{ number_format($product->price) }}</td>
                                                         <td><span
-                                                                class="badge rounded-pill bg-soft-success font-size-12">{{ $product->category->name }}</span>
+                                                                class="badge rounded-pill bg-soft-success font-size-12">{{ $product->subCategory->name }}</span>
                                                         </td>
                                                     </tr>
                                                 @endforeach

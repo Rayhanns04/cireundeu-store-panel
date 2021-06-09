@@ -17,7 +17,7 @@
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
 </head>
 
 
@@ -44,10 +44,9 @@
                         <a href="/" class="logo logo-light"> <span class="logo-sm">
                                 <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
                             </span> <span class="logo-lg">
-                                <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="20">
+                                <img src="assets/images/logo-light.png" alt="" height="20">
                             </span> </a>
                     </div>
-
 
                     <button type="button"
                         class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
@@ -92,35 +91,31 @@
                     <div class="dropdown d-inline-block language-switch">
                         <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img src="{{ asset('assets/images/flags/us.jpg') }}" alt="Header Language" height="16">
+                            <img src="assets/images/flags/us.jpg" alt="Header Language" height="16">
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{ asset('assets/images/flags/spain.jpg') }}" alt="user-image" class="me-1"
-                                    height="12">
+                                <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12">
                                 <span class="align-middle">Spanish</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{ asset('assets/images/flags/germany.jpg') }}" alt="user-image"
-                                    class="me-1" height="12">
+                                <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12">
                                 <span class="align-middle">German</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{ asset('assets/images/flags/italy.jpg') }}" alt="user-image" class="me-1"
-                                    height="12">
+                                <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12">
                                 <span class="align-middle">Italian</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{ asset('assets/images/flags/russia.jpg') }}" alt="user-image"
-                                    class="me-1" height="12">
+                                <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12">
                                 <span class="align-middle">Russian</span>
                             </a>
                         </div>
@@ -136,21 +131,19 @@
                                 <div class="row g-0">
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/github.png') }}" alt="Github">
+                                            <img src="assets/images/brands/github.png" alt="Github">
                                             <span>GitHub</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/bitbucket.png') }}"
-                                                alt="bitbucket">
+                                            <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
                                             <span>Bitbucket</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/dribbble.png') }}"
-                                                alt="dribbble">
+                                            <img src="assets/images/brands/dribbble.png" alt="dribbble">
                                             <span>Dribbble</span>
                                         </a>
                                     </div>
@@ -159,20 +152,19 @@
                                 <div class="row g-0">
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/dropbox.png') }}" alt="dropbox">
+                                            <img src="assets/images/brands/dropbox.png" alt="dropbox">
                                             <span>Dropbox</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/mail_chimp.png') }}"
-                                                alt="mail_chimp">
+                                            <img src="assets/images/brands/mail_chimp.png" alt="mail_chimp">
                                             <span>Mail Chimp</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/slack.png') }}" alt="slack">
+                                            <img src="assets/images/brands/slack.png" alt="slack">
                                             <span>Slack</span>
                                         </a>
                                     </div>
@@ -181,11 +173,116 @@
                         </div>
                     </div>
 
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            data-bs-toggle="fullscreen">
+                            <i class="uil-minus-path"></i>
+                        </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="uil-bell"></i>
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h5 class="m-0 font-size-16"> Notifications </h5>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small"> Mark all as read</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="avatar-xs">
+                                                <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                    <i class="uil-shopping-basket"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <img src="assets/images/users/avatar-3.jpg" class="rounded-circle avatar-xs"
+                                                alt="user-pic">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">James Lemire</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">It will seem like simplified English.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hours ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="avatar-xs">
+                                                <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                    <i class="uil-truck"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Your item is shipped</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <img src="assets/images/users/avatar-4.jpg" class="rounded-circle avatar-xs"
+                                                alt="user-pic">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">As a skeptical Cambridge friend of mine occidental.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hours ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top">
+                                <div class="d-grid">
+                                    <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                        <i class="uil-arrow-circle-right me-1"></i> View More..
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user"
-                                src="{{ asset('assets/images/users/avatar-4.jpg') }}" alt="Header Avatar">
+                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-4.jpg"
+                                alt="Header Avatar">
                             <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">Marcus</span>
                             <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
                         </button>
@@ -293,6 +390,8 @@
         </div>
         <!-- Left Sidebar End -->
 
+
+
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
@@ -305,12 +404,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Create Category</h4>
+                                <h4 class="mb-0">Edit Category</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Categories</a></li>
-                                        <li class="breadcrumb-item active">Create Category</li>
+                                        <li class="breadcrumb-item active">Edit Category</li>
                                     </ol>
                                 </div>
 
@@ -322,12 +421,13 @@
                     <div class="row">
                         <div class="card">
                             <div class="card-body">
-                                <form enctype="multipart/form-data" action="/categories/save-crate" method="POST">
+                                <form enctype="multipart/form-data"
+                                    action="{{ url('/subcategories/save-edit', $category->id) }}" method="POST">
                                     @csrf
                                     <div class="mb-3">
                                         <label class="form-label">Name</label>
                                         <input type="text" class="form-control" required placeholder="Type something"
-                                            name="name" />
+                                            name="name" value="{{ $category->name }}" />
                                     </div>
 
                                     <div>
@@ -335,7 +435,7 @@
                                             <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
                                                 Submit
                                             </button>
-                                            <a class="btn btn-secondary waves-effect" href="/products">
+                                            <a class="btn btn-secondary waves-effect" href="/categories">
                                                 Cancel
                                             </a>
                                         </div>
@@ -450,8 +550,6 @@
     <script src="{{ asset('assets/libs/parsleyjs/parsley.min.js') }}"></script>
 
     <script src="{{ asset('assets/js/pages/form-validation.init.js') }}"></script>
-
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
 </body>
 

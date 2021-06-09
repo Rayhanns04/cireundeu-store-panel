@@ -9,7 +9,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo-sm.png') }}">
 
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -360,18 +360,26 @@
                         </li>
 
                         <li>
+                            <a href="/categories">
+                                <i class="uil-home-alt"></i>
+                                <span>Categories</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/subcategories">
+                                <i class="uil-home-alt"></i>
+                                <span>Sub Categories</span>
+                            </a>
+                        </li>
+
+                        <li>
                             <a href="/products">
                                 <i class="uil-home-alt"></i>
                                 <span>Products</span>
                             </a>
                         </li>
 
-                        <li>
-                            <a href="/categories">
-                                <i class="uil-home-alt"></i>
-                                <span>Categories</span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 <!-- Sidebar -->
@@ -425,7 +433,7 @@
                                             <th>Title</th>
                                             <th>Description</th>
                                             <th>Price</th>
-                                            <th>Category Name</th>
+                                            <th>Sub Categories</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -441,7 +449,7 @@
                                                 <td>{{ $product->description }}</td>
                                                 <td>Rp {{ number_format($product->price) }}</td>
                                                 <td><span
-                                                        class="badge rounded-pill bg-soft-success font-size-12">{{ $product->category->name }}</span>
+                                                        class="badge rounded-pill bg-soft-success font-size-12">{{ $product->subCategory->name }}</span>
                                                 </td>
                                                 <td>
                                                     <a href="{{ url('/products/edit/' . $product->id) }}"

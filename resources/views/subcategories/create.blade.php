@@ -322,12 +322,22 @@
                     <div class="row">
                         <div class="card">
                             <div class="card-body">
-                                <form enctype="multipart/form-data" action="/categories/save-crate" method="POST">
+                                <form enctype="multipart/form-data" action="/subcategories/save-crate" method="POST">
                                     @csrf
                                     <div class="mb-3">
                                         <label class="form-label">Name</label>
                                         <input type="text" class="form-control" required placeholder="Type something"
                                             name="name" />
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <select id="my-select" class="form-control" name="category_name">
+                                            <option>Pilih Sub Category</option>
+                                            @foreach ($categories as $categorie)
+                                                <option value="{{ $categorie->id }}">
+                                                    {{ $categorie->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
 
                                     <div>

@@ -9,7 +9,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo-sm.png') }}">
 
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -317,27 +317,27 @@
                 </div>
             </div>
         </header>
-       
-       <!-- ========== Left Sidebar Start ========== -->
+
+        <!-- ========== Left Sidebar Start ========== -->
         <div class="vertical-menu">
 
             <!-- LOGO -->
             <div class="navbar-brand-box">
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{asset("assets/images/logo-sm.png")}}" alt="" height="22">
+                        <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{asset("assets/images/logo-dark.png")}}" alt="" height="20">
+                        <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="20">
                     </span>
                 </a>
 
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{asset("assets/images/logo-sm.png")}}" alt="" height="22">
+                        <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{asset("assets/images/logo-light.png")}}" alt="" height="20">
+                        <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="20">
                     </span>
                 </a>
             </div>
@@ -354,10 +354,25 @@
                     <ul class="metismenu list-unstyled" id="side-menu">
                         <li class="menu-title">Menu</li>
 
+
                         <li>
                             <a href="/">
                                 <i class="uil-home-alt"></i>
                                 <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/categories">
+                                <i class="uil-home-alt"></i>
+                                <span>Categories</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/subcategories">
+                                <i class="uil-home-alt"></i>
+                                <span>Sub Categories</span>
                             </a>
                         </li>
 
@@ -368,12 +383,6 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="/categories">
-                                <i class="uil-home-alt"></i>
-                                <span>Categories</span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 <!-- Sidebar -->

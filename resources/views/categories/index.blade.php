@@ -9,7 +9,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo-sm.png') }}">
 
     <!-- Bootstrap Css -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -352,10 +352,25 @@
                     <ul class="metismenu list-unstyled" id="side-menu">
                         <li class="menu-title">Menu</li>
 
+
                         <li>
                             <a href="/">
                                 <i class="uil-home-alt"></i>
                                 <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/categories">
+                                <i class="uil-home-alt"></i>
+                                <span>Categories</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/subcategories">
+                                <i class="uil-home-alt"></i>
+                                <span>Sub Categories</span>
                             </a>
                         </li>
 
@@ -366,12 +381,6 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="/categories">
-                                <i class="uil-home-alt"></i>
-                                <span>Categories</span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 <!-- Sidebar -->

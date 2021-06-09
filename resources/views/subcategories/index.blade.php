@@ -17,7 +17,7 @@
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
 </head>
 
 
@@ -44,10 +44,9 @@
                         <a href="/" class="logo logo-light"> <span class="logo-sm">
                                 <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
                             </span> <span class="logo-lg">
-                                <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="20">
+                                <img src="assets/images/logo-light.png" alt="" height="20">
                             </span> </a>
                     </div>
-
 
                     <button type="button"
                         class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
@@ -55,9 +54,9 @@
                     </button>
 
                     <!-- App Search-->
-                    <form class="app-search d-none d-lg-block">
+                    <form class="app-search d-none d-lg-block" method="GET" action="/subcategories">
                         <div class="position-relative">
-                            <input type="text" class="form-control" placeholder="Search...">
+                            <input type="text" class="form-control" placeholder="Search..." name="search">
                             <span class="uil-search"></span>
                         </div>
                     </form>
@@ -92,35 +91,31 @@
                     <div class="dropdown d-inline-block language-switch">
                         <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img src="{{ asset('assets/images/flags/us.jpg') }}" alt="Header Language" height="16">
+                            <img src="assets/images/flags/us.jpg" alt="Header Language" height="16">
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{ asset('assets/images/flags/spain.jpg') }}" alt="user-image" class="me-1"
-                                    height="12">
+                                <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12">
                                 <span class="align-middle">Spanish</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{ asset('assets/images/flags/germany.jpg') }}" alt="user-image"
-                                    class="me-1" height="12">
+                                <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12">
                                 <span class="align-middle">German</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{ asset('assets/images/flags/italy.jpg') }}" alt="user-image" class="me-1"
-                                    height="12">
+                                <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12">
                                 <span class="align-middle">Italian</span>
                             </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <img src="{{ asset('assets/images/flags/russia.jpg') }}" alt="user-image"
-                                    class="me-1" height="12">
+                                <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12">
                                 <span class="align-middle">Russian</span>
                             </a>
                         </div>
@@ -136,21 +131,19 @@
                                 <div class="row g-0">
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/github.png') }}" alt="Github">
+                                            <img src="assets/images/brands/github.png" alt="Github">
                                             <span>GitHub</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/bitbucket.png') }}"
-                                                alt="bitbucket">
+                                            <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
                                             <span>Bitbucket</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/dribbble.png') }}"
-                                                alt="dribbble">
+                                            <img src="assets/images/brands/dribbble.png" alt="dribbble">
                                             <span>Dribbble</span>
                                         </a>
                                     </div>
@@ -159,20 +152,19 @@
                                 <div class="row g-0">
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/dropbox.png') }}" alt="dropbox">
+                                            <img src="assets/images/brands/dropbox.png" alt="dropbox">
                                             <span>Dropbox</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/mail_chimp.png') }}"
-                                                alt="mail_chimp">
+                                            <img src="assets/images/brands/mail_chimp.png" alt="mail_chimp">
                                             <span>Mail Chimp</span>
                                         </a>
                                     </div>
                                     <div class="col">
                                         <a class="dropdown-icon-item" href="#">
-                                            <img src="{{ asset('assets/images/brands/slack.png') }}" alt="slack">
+                                            <img src="assets/images/brands/slack.png" alt="slack">
                                             <span>Slack</span>
                                         </a>
                                     </div>
@@ -181,11 +173,116 @@
                         </div>
                     </div>
 
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            data-bs-toggle="fullscreen">
+                            <i class="uil-minus-path"></i>
+                        </button>
+                    </div>
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="uil-bell"></i>
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h5 class="m-0 font-size-16"> Notifications </h5>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small"> Mark all as read</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="avatar-xs">
+                                                <span class="avatar-title bg-primary rounded-circle font-size-16">
+                                                    <i class="uil-shopping-basket"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Your order is placed</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <img src="assets/images/users/avatar-3.jpg" class="rounded-circle avatar-xs"
+                                                alt="user-pic">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">James Lemire</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">It will seem like simplified English.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hours ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="avatar-xs">
+                                                <span class="avatar-title bg-success rounded-circle font-size-16">
+                                                    <i class="uil-truck"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Your item is shipped</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">If several languages coalesce the grammar</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 3 min ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0 me-3">
+                                            <img src="assets/images/users/avatar-4.jpg" class="rounded-circle avatar-xs"
+                                                alt="user-pic">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">Salena Layfield</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">As a skeptical Cambridge friend of mine occidental.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> 1 hours ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top">
+                                <div class="d-grid">
+                                    <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                                        <i class="uil-arrow-circle-right me-1"></i> View More..
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle header-profile-user"
-                                src="{{ asset('assets/images/users/avatar-4.jpg') }}" alt="Header Avatar">
+                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-4.jpg"
+                                alt="Header Avatar">
                             <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15">Marcus</span>
                             <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
                         </button>
@@ -219,28 +316,26 @@
                 </div>
             </div>
         </header>
-
-
         <!-- ========== Left Sidebar Start ========== -->
         <div class="vertical-menu">
 
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
+                <a href="/" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="20">
+                        <img src="assets/images/logo-dark.png" alt="" height="20">
                     </span>
                 </a>
 
-                <a href="index.html" class="logo logo-light">
+                <a href="/" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
+                        <img src="assets/images/logo-sm.png" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="20">
+                        <img src="assets/images/logo-light.png" alt="" height="20">
                     </span>
                 </a>
             </div>
@@ -293,6 +388,8 @@
         </div>
         <!-- Left Sidebar End -->
 
+
+
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
@@ -305,12 +402,12 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-flex align-items-center justify-content-between">
-                                <h4 class="mb-0">Create Category</h4>
+                                <h4 class="mb-0">Sub Category Table</h4>
 
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Categories</a></li>
-                                        <li class="breadcrumb-item active">Create Category</li>
+                                        <li class="breadcrumb-item active">Category Table</li>
                                     </ol>
                                 </div>
 
@@ -318,33 +415,60 @@
                         </div>
                     </div>
                     <!-- end page title -->
-                    <!-- end row -->
-                    <div class="row">
-                        <div class="card">
-                            <div class="card-body">
-                                <form enctype="multipart/form-data" action="/categories/save-crate" method="POST">
-                                    @csrf
-                                    <div class="mb-3">
-                                        <label class="form-label">Name</label>
-                                        <input type="text" class="form-control" required placeholder="Type something"
-                                            name="name" />
-                                    </div>
 
-                                    <div>
-                                        <div>
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
-                                                Submit
-                                            </button>
-                                            <a class="btn btn-secondary waves-effect" href="/products">
-                                                Cancel
-                                            </a>
-                                        </div>
-                                    </div>
-                                </form>
-
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-tools">
+                                <a href="{{ url('/subcategories/create') }}"
+                                    class="btn btn-soft-primary d-flex float-end">Create</a>
                             </div>
                         </div>
-                    </div> <!-- end row -->
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($categories as $categorie)
+                                            <tr>
+                                                <th scope="row">{{ $loop->iteration }}</th>
+                                                <td>{{ $categorie->name }}</td>
+
+                                                <td>
+                                                    <a href="{{ url('/categories/edit/' . $categorie->id) }}"
+                                                        class="mx-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-pencil-fill"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                                                        </svg>
+                                                    </a>
+                                                    <a href="{{ url('/categories/' . $categorie->id) }}"
+                                                        class="mx-2">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-trash2-fill"
+                                                            viewBox="0 0 16 16">
+                                                            <path
+                                                                d="M2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225zm9.89-.69C10.966 2.214 9.578 2 8 2c-1.58 0-2.968.215-3.926.534-.477.16-.795.327-.975.466.18.14.498.307.975.466C5.032 3.786 6.42 4 8 4s2.967-.215 3.926-.534c.477-.16.795-.327.975-.466-.18-.14-.498-.307-.975-.466z" />
+                                                        </svg>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end row -->
 
                 </div> <!-- container-fluid -->
             </div>
@@ -434,8 +558,6 @@
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
 
-    <!-- App js -->
-    <script src="{{ asset('assets/js/app.js') }}"></script>
     <!-- JAVASCRIPT -->
     <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -445,14 +567,22 @@
     <script src="{{ asset('assets/libs/waypoints/lib/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('assets/libs/jquery.counterup/jquery.counterup.min.js') }}"></script>
 
+    <!-- App js -->
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 
-    <!-- parsleyjs -->
-    <script src="{{ asset('assets/libs/parsleyjs/parsley.min.js') }}"></script>
+    {{-- Sweetalert --}}
+    <script src="{{ asset('assets/js/plugin/sweetalert.js') }}"></script>
+    <script>
+        @if (session('status'))
+            swal({
+            title: "Good job!",
+            text: "{{ session('status') }} {{ session('message') }}",
+            icon: "{{ session('statuscode') }}",
+            button: "Aww yiss!",
+            });
+        @endif
 
-    <script src="{{ asset('assets/js/pages/form-validation.init.js') }}"></script>
-
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-
+    </script>
 </body>
 
 </html>

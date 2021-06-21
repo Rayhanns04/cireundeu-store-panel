@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CategoryResource;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -16,7 +17,7 @@ class CategoryApiController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::with('subCategory')->get();
 
         return response()->json(['message' => 'success get categories data', 'data' => $categories], Response::HTTP_OK);
     }

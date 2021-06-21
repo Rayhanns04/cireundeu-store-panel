@@ -22,3 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('/products', ProductApiController::class);
 Route::resource('/categories', CategoryApiController::class);
+Route::get('/download/{filename}', [ProductApiController::class, 'downloadImage']);

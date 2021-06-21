@@ -453,12 +453,12 @@
                                     <div class="mb-3">
                                         <label class="form-label">Category Name</label>
                                         <select id="my-select" class="form-control" name="category_name"
-                                            value="{{ $product->category->name }}">
-                                            <option selected>Pilih Category ( {{ $product->category->name }} )
+                                            value="{{ $product->subCategory->name }}">
+                                            <option selected>Pilih Category ( {{ $product->subCategory->name }} )
                                             </option>
-                                            @foreach ($categories as $categorie)
-                                                <option value="{{ $categorie->id }}">
-                                                    {{ $categorie->name }}</option>
+                                            @foreach ($subCategories as $subCategorie)
+                                                <option value="{{ $subCategorie->id }}">
+                                                    {{ $subCategorie->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>

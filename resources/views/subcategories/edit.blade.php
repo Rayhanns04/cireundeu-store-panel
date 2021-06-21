@@ -430,12 +430,23 @@
                                             name="name" value="{{ $category->name }}" />
                                     </div>
 
+                                    <div class="mb-3">
+                                        <label class="form-label">Category</label>
+                                        <select id="my-select" class="form-control" name="category_name">
+                                            <option>Pilih Category ({{ $category->category->name }})</option>
+                                            @foreach ($categories as $categorie)
+                                                <option value="{{ $categorie->id }}">
+                                                    {{ $categorie->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
                                     <div>
                                         <div>
                                             <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
                                                 Submit
                                             </button>
-                                            <a class="btn btn-secondary waves-effect" href="/categories">
+                                            <a class="btn btn-secondary waves-effect" href="/subcategories">
                                                 Cancel
                                             </a>
                                         </div>

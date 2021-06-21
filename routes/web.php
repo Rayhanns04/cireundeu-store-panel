@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StorefrontController;
 use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,5 @@ Route::prefix('/subcategories')->group(function() {
     Route::post('/save-edit/{id}', [SubCategoryController::class, 'update']);
     Route::get('/{id}', [SubCategoryController::class, 'destroy']);
 });
+
+Route::get('/alls', [StorefrontController::class, 'index']);

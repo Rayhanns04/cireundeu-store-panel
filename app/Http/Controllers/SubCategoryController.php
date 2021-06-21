@@ -47,19 +47,21 @@ class SubCategoryController extends Controller
 
     public function edit($id) {
         $category = SubCategory::findOrFail($id);
+        $categories = Category::all();
 
-        return view('subcategories.edit', compact('category'));
+        return view('subcategories.edit', compact('category', 'categories'));
     }
 
     public function update(Request $request, $id) {
         $category = SubCategory::findOrFail($id);
 
         $category->name = $request->name;
+        $category->category_id = $request->category_name;
         $category->update();
 
         Session::flash('statuscode', 'success');
         Session::flash('message', ($category->name));
-        return redirect('/categories')->with('status', 'Success update category!');
+        return redirect('/subcategories')->with('status', 'Success update category!');
     }
 
     public function destroy($id) {

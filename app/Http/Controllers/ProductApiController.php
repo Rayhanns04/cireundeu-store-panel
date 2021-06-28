@@ -100,10 +100,10 @@ class ProductApiController extends Controller
          return response()->json(['message' => 'Product deleted', 'data' => $product], Response::HTTP_OK);
     }
 
-    public function downloadImage($filename)
-    {
-        // return dd("Success" . $filename);
-        return response()->download(public_path().'/assets/images/productsImage/'.$filename);
-    }
+    // public function downloadImage($filename)
+    // {
+    //     // return dd("Success" . $filename);
+    //     return response()->download(public_path().'/assets/images/productsImage/'.$filename);
+    // }
 
 }

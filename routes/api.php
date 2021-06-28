@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ApiDownloadImageController;
+use App\Http\Controllers\CarouselApiController;
 use App\Http\Controllers\CategoryApiController;
 use App\Http\Controllers\ProductApiController;
 use Illuminate\Http\Request;
@@ -22,4 +24,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('/products', ProductApiController::class);
 Route::resource('/categories', CategoryApiController::class);
-Route::get('/download/{filename}', [ProductApiController::class, 'downloadImage']);
+Route::resource('/carousels', CarouselApiController::class);
+Route::get('/getImage/{path}/{imagename}', [ApiDownloadImageController::class, 'index']);
+// Route::get('/download/{filename}', [ProductApiController::class, 'downloadImage']);

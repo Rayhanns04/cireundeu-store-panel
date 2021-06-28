@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\StorefrontController;
 use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,4 +52,11 @@ Route::prefix('/subcategories')->group(function() {
     Route::get('/{id}', [SubCategoryController::class, 'destroy']);
 });
 
-Route::get('/alls', [StorefrontController::class, 'index']);
+Route::prefix('/carousels')->group(function() {
+    Route::get('/', [CarouselController::class, 'index']);
+    Route::get('/create', [CarouselController::class, 'create']);
+    Route::post('/save-crate', [CarouselController::class, 'store']);
+    Route::get('/edit/{id}', [CarouselController::class, 'edit']);
+    Route::post('/save-edit/{id}', [CarouselController::class, 'update']);
+    Route::get('/{id}', [CarouselController::class, 'destroy']);
+});
